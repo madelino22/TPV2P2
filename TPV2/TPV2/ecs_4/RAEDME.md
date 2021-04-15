@@ -1,0 +1,1 @@
+ECS with messages that send all including reactions, but messages are actually delivered only when flushMsgsQueue is called (works for messages with union, i.e., a single type for Message, does not work with inheritance)
