@@ -1,6 +1,6 @@
 #pragma once
-#include "../TPV2/ecs_4/ecs/System.h"
-#include "../TPV2/ecs_4/ecs/Entity.h"
+#include "../ecs_4/ecs/System.h"
+#include "../ecs_4/ecs/Entity.h"
 #include <vector>
 
 enum GameState {NEWGAME, PAUSE, RUNNING, GAMEOVER, WON};
@@ -14,7 +14,7 @@ public:
     GameState getGameState();
     void init() override;
     void update() override;
-    std::vector<Entity*>* getEntidades() { return entidades; }
+    std::vector<Entity*>* getEntidades() { return &entidades; }
 private:
     
     GameState estado = NEWGAME;

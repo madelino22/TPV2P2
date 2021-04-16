@@ -1,20 +1,26 @@
-﻿  GameCtrlSystem.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'GameCtrlSystem.cpp': No such file or directory
-  Game.cpp
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,24): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,22): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\RenderSystem.h(2,10): fatal error C1083: No se puede abrir el archivo incluir: '../TPV2/ecs_4/ecs/System.h': No such file or directory
-  main.cpp
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,24): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,22): error C2238: símbolos (token) inesperados delante de ';'
-  RenderSystem.cpp
-c1xx : fatal error C1083: No se puede abrir el archivo origen: 'RenderSystem.cpp': No such file or directory
+﻿  Game.cpp
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,35): error C2027: uso del tipo 'mpl::IndexOf<T,mpl::TypeList<>>' sin definir
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27): message : vea la declaración de 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\ecs.h(65): message : Vea la referencia a la creación de una instancia de clase plantilla "mpl::IndexOf<T,ecs::SysList>" que se está compilando
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(96): message : vea la referencia a la plantilla de variables 'const size_t sysIdx<RenderSystem>' que se está compilando
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.cpp(36): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addSystem<RenderSystem,>(void)" que se está compilando
+          with
+          [
+              T=RenderSystem
+          ]
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,7): error C2064: el término no se evalúa como una función con 1 argumentos
+  GameCtrlSystem.cpp
+  Vector2D.cpp
   Generando código...

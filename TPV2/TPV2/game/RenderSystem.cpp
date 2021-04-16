@@ -1,11 +1,8 @@
 #include "RenderSystem.h"
-#include "components/Transform.h"
-#include "ecs_4/ecs/Manager.h"
-#include "sdlutils/SDLUtils.h"
-RenderSystem::RenderSystem(std::vector<Entity*>* entidades_)
-{
-	entidades = entidades_;
-}
+#include "../components/Transform.h"
+#include "../ecs_4/ecs/Manager.h"
+#include "../sdlutils/SDLUtils.h"
+
 void RenderSystem::renderEntities()
 {
 	for (Entity* e : *entidades)

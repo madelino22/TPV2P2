@@ -1,8 +1,8 @@
 #include "GameCtrlSystem.h"
-#include "ecs_4/ecs/Manager.h"
-#include "sdlutils/SDLUtils.h"
-#include "components/Transform.h"
-#include "sdlutils/InputHandler.h"
+#include "../ecs_4/ecs/Manager.h"
+#include "../sdlutils/SDLUtils.h"
+#include "../components/Transform.h"
+#include "../sdlutils/InputHandler.h"
 
 
 void GameCtrlSystem::onFighterDeath(int fighterLives)
