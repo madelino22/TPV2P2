@@ -7,10 +7,10 @@
 #include "../ecs_4/ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
-
 #include "../ecs_4/ecs/Manager.h"
 #include "../utils/Vector2D.h"
-
+#include "RenderSystem.h"
+#include "GameCtrlSystem.h"
 Game::Game() {
 	mngr_.reset(new Manager());
 }
@@ -27,13 +27,14 @@ void Game::init() {
 
 
 
-	/*auto *ball = mngr_->addEntity();
+	auto *ball = mngr_->addEntity();
 	mngr_->addComponent<Transform>(ball, Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
-		Vector2D(), 10.0f, 10.0f, 0.0f);*/
-	/*ball->addComponent<Transform>(
+		Vector2D(), 10.0f, 10.0f, 0.0f);
+	mngr_->addComponent<Transform>(ball,
 			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
-			Vector2D(), 10.0f, 10.0f, 0.0f);*/
-	
+			Vector2D(), 10.0f, 10.0f, 0.0f);
+	renderSystem = mngr_->addSystem<RenderSystem>();
+	//for (int i = 0; i != 5000; ++i) renderSystem->update();
 
 
 }

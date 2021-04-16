@@ -93,6 +93,9 @@
     <ClCompile Include="GameCtrlSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="RenderSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -177,6 +180,9 @@
       <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="GameCtrlSystem.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>

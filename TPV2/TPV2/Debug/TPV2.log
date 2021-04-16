@@ -1,4 +1,20 @@
 ﻿  GameCtrlSystem.cpp
+c1xx : fatal error C1083: No se puede abrir el archivo origen: 'GameCtrlSystem.cpp': No such file or directory
   Game.cpp
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,24): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,22): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\RenderSystem.h(2,10): fatal error C1083: No se puede abrir el archivo incluir: '../TPV2/ecs_4/ecs/System.h': No such file or directory
+  main.cpp
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(20,24): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.h(21,22): error C2238: símbolos (token) inesperados delante de ';'
+  RenderSystem.cpp
+c1xx : fatal error C1083: No se puede abrir el archivo origen: 'RenderSystem.cpp': No such file or directory
   Generando código...
-  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe
