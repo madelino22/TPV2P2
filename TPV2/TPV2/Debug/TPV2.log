@@ -1,26 +1,43 @@
 ﻿  Game.cpp
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,35): error C2027: uso del tipo 'mpl::IndexOf<T,mpl::TypeList<>>' sin definir
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,35): error C2027: uso del tipo 'mpl::IndexOf<T,mpl::TypeList<>>' sin definir
+          with
+          [
+              T=GameCtrlSystem
+          ]
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27): message : vea la declaración de 'mpl::IndexOf<T,mpl::TypeList<>>'
+          with
+          [
+              T=GameCtrlSystem
+          ]
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\ecs.h(65): message : Vea la referencia a la creación de una instancia de clase plantilla "mpl::IndexOf<T,ecs::SysList>" que se está compilando
+          with
+          [
+              T=GameCtrlSystem
+          ]
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(96): message : vea la referencia a la plantilla de variables 'const size_t sysIdx<GameCtrlSystem>' que se está compilando
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\Game.cpp(38): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addSystem<GameCtrlSystem,>(void)" que se está compilando
+          with
+          [
+              T=GameCtrlSystem
+          ]
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,35): error C2027: uso del tipo 'mpl::IndexOf<T,mpl::TypeList<>>' sin definir
           with
           [
               T=RenderSystem
           ]
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27): message : vea la declaración de 'mpl::IndexOf<T,mpl::TypeList<>>'
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27): message : vea la declaración de 'mpl::IndexOf<T,mpl::TypeList<>>'
           with
           [
               T=RenderSystem
           ]
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\ecs.h(65): message : Vea la referencia a la creación de una instancia de clase plantilla "mpl::IndexOf<T,ecs::SysList>" que se está compilando
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\ecs.h(65): message : Vea la referencia a la creación de una instancia de clase plantilla "mpl::IndexOf<T,ecs::SysList>" que se está compilando
           with
           [
               T=RenderSystem
           ]
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(96): message : vea la referencia a la plantilla de variables 'const size_t sysIdx<RenderSystem>' que se está compilando
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\game\Game.cpp(36): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addSystem<RenderSystem,>(void)" que se está compilando
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(96): message : vea la referencia a la plantilla de variables 'const size_t sysIdx<RenderSystem>' que se está compilando
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\Game.cpp(39): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addSystem<RenderSystem,>(void)" que se está compilando
           with
           [
               T=RenderSystem
           ]
-C:\Users\Roy\Documents\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\mpl.h(27,7): error C2064: el término no se evalúa como una función con 1 argumentos
-  GameCtrlSystem.cpp
-  Vector2D.cpp
-  Generando código...

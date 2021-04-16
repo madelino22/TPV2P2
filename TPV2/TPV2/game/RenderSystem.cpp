@@ -3,6 +3,13 @@
 #include "../ecs_4/ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
 
+RenderSystem::RenderSystem()
+{
+	tr_ = nullptr;
+	entidades = nullptr;
+	tex_ = nullptr;
+}
+
 void RenderSystem::renderEntities()
 {
 	for (Entity* e : *entidades)

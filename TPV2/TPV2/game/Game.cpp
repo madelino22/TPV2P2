@@ -13,6 +13,8 @@
 #include "GameCtrlSystem.h"
 Game::Game() {
 	mngr_.reset(new Manager());
+	gameCrtlSystem = nullptr;
+	renderSystem = nullptr;
 }
 
 Game::~Game() {
@@ -27,12 +29,13 @@ void Game::init() {
 
 
 
-	auto *ball = mngr_->addEntity();
-	mngr_->addComponent<Transform>(ball, Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
-		Vector2D(), 10.0f, 10.0f, 0.0f);
-	mngr_->addComponent<Transform>(ball,
-			Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
-			Vector2D(), 10.0f, 10.0f, 0.0f);
+	//auto *ball = mngr_->addEntity();
+	//mngr_->addComponent<Transform>(ball, Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
+	//	Vector2D(), 10.0f, 10.0f, 0.0f);
+	//mngr_->addComponent<Transform>(ball,
+	//		Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
+	//		Vector2D(), 10.0f, 10.0f, 0.0f);
+	gameCrtlSystem = mngr_->addSystem<GameCtrlSystem>();
 	renderSystem = mngr_->addSystem<RenderSystem>();
 	//for (int i = 0; i != 5000; ++i) renderSystem->update();
 
