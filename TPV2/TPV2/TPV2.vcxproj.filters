@@ -179,10 +179,10 @@
     <ClInclude Include="game\messages.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="GameCtrlSystem.h">
+    <ClInclude Include="game\GameCtrlSystem.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystem.h">
+    <ClInclude Include="game\RenderSystem.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "../sdlutils/InputHandler.h"
 
 
+
 void GameCtrlSystem::onFighterDeath(int fighterLives)
 {
 
@@ -58,6 +59,18 @@ GameState GameCtrlSystem::getGameState()
 void GameCtrlSystem::init()
 {
 	estado = NEWGAME;
+
+	//esto iría en el fighterSystem
+
+	Entity* fighter = manager_->addEntity();
+	
+	manager_->addComponent<Transform>(fighter, Vector2D(sdlutils().width()/2, sdlutils().height() / 2), Vector2D(0,0), 20,20, 0);
+	manager_->setHandler<JET>(fighter);
+
+	
+	//-----------------------------------
+
+
 	jetTr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
 }
 

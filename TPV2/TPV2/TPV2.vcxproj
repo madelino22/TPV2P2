@@ -44,14 +44,14 @@
     <ClInclude Include="ecs_4\ecs\Manager.h" />
     <ClInclude Include="ecs_4\ecs\mpl.h" />
     <ClInclude Include="ecs_4\ecs\System.h" />
-    <ClInclude Include="GameCtrlSystem.h" />
     <ClInclude Include="game\ecs_defs.h" />
     <ClInclude Include="game\Game.h" />
+    <ClInclude Include="game\GameCtrlSystem.h" />
     <ClInclude Include="game\messages.h" />
+    <ClInclude Include="game\RenderSystem.h" />
     <ClInclude Include="json\simplejson_demo.h" />
     <ClInclude Include="json\JSON.h" />
     <ClInclude Include="json\JSONValue.h" />
-    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="sdlutils\sdlutils_demo.h" />
     <ClInclude Include="sdlutils\Font.h" />
     <ClInclude Include="sdlutils\InputHandler.h" />

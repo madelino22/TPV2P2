@@ -1,6 +1,14 @@
-﻿  Entity.cpp
-  Manager.cpp
-  GameCtrlSystem.cpp
-  Game.cpp
-  Generando código...
-  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\bin\TPV2Debug.exe
+﻿  GameCtrlSystem.cpp
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\GameCtrlSystem.cpp(67,96): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\GameCtrlSystem.cpp(67,72): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(38,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\GameCtrlSystem.cpp(67): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D,Vector2D,int,int,int>(Entity *,Vector2D &&,Vector2D &&,int &&,int &&,int &&)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe

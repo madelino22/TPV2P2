@@ -17,7 +17,7 @@ public:
     std::vector<Entity*>* getEntidades() { return &entidades; }
 private:
     
-    GameState estado = NEWGAME;
+    GameState estado = RUNNING;
     Transform* jetTr;
     std::vector<Entity*> entidades;
     

@@ -37,6 +37,7 @@ void Game::init() {
 	//		Vector2D(), 10.0f, 10.0f, 0.0f);
 	gameCrtlSystem = mngr_->addSystem<GameCtrlSystem>();
 	renderSystem = mngr_->addSystem<RenderSystem>();
+	dynamic_cast<RenderSystem*>(renderSystem)->getEntities(&(mngr_->getEnteties()));
 	//for (int i = 0; i != 5000; ++i) renderSystem->update();
 
 
@@ -44,34 +45,35 @@ void Game::init() {
 
 void Game::start() {
 
-	// a boolean to exit the loop
-	//bool exit = false;
-	//SDL_Event event;
+	/* a boolean to exit the loop*/
+	bool exit = false;
+	SDL_Event event;
 
-	//while (!exit) {
-	//	Uint32 startTime = sdlutils().currRealTime();
+	while (!exit) {
+		Uint32 startTime = sdlutils().currRealTime();
 
-	//	ih().clearState();
-	//	while (SDL_PollEvent(&event))
-	//		ih().update(event);
+		ih().clearState();
+		while (SDL_PollEvent(&event))
+			ih().update(event);
 
-	//	if (ih().isKeyDown(SDL_SCANCODE_ESCAPE)) {
-	//		exit = true;
-	//		continue;
-	//	}
+		if (ih().isKeyDown(SDL_SCANCODE_ESCAPE)) {
+			exit = true;
+			continue;
+		}
 
-	//	//mngr_->update();
-	//	mngr_->refresh();
+		gameCrtlSystem->update();
+		//mngr_->update();
+		mngr_->refresh();
 
-	//	sdlutils().clearRenderer();
-	//	//mngr_->render();
-	//	sdlutils().presentRenderer();
+		sdlutils().clearRenderer();
+		renderSystem->update();
+		sdlutils().presentRenderer();
 
-	//	Uint32 frameTime = sdlutils().currRealTime() - startTime;
+		Uint32 frameTime = sdlutils().currRealTime() - startTime;
 
-	//	if (frameTime < 20)
-	//		SDL_Delay(20 - frameTime);
-	//}
+		if (frameTime < 20)
+			SDL_Delay(20 - frameTime);
+	}
 
 }
 

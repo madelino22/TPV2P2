@@ -19,3 +19,10 @@ struct Asteroids;
 // handlers
 struct JET;
 #define _HDLRS_LIST_ JET
+
+
+//systems
+class GameCtrlSystem;
+class RenderSystem;
+
+#define _SYS_LIST_ GameCtrlSystem, RenderSystem

@@ -13,10 +13,10 @@ public:
     void renderHUD();// - dibujar el marcador y las vidas (siempre).
     void renderMessages();// - dibujar el mensaje correspondiente si el juego está parado (como en la práctica 1)
     void update() override;
-
+    void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
 private:
     Transform* tr_;
-    std::vector<Entity*>* entidades;
+    const std::vector<Entity*>* entidades;
     Texture* tex_;
 };
 
