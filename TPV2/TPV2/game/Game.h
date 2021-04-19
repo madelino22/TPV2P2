@@ -2,7 +2,7 @@
 
 #pragma once
 #include <memory>
-
+#include "../ecs_4/ecs/System.h"
 
 
 // when you are not using the methods of a class, just
@@ -17,5 +17,7 @@ public:
 	void start();
 private:
 	std::unique_ptr<Manager> mngr_;
+	System* gameCrtlSystem;
+	System* renderSystem;
 };
 

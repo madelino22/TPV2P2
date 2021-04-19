@@ -21,8 +21,9 @@
   <ItemGroup>
     <ClCompile Include="ecs_4\ecs\Entity.cpp" />
     <ClCompile Include="ecs_4\ecs\Manager.cpp" />
-    <ClCompile Include="GameCtrlSystem.cpp" />
     <ClCompile Include="game\Game.cpp" />
+    <ClCompile Include="game\GameCtrlSystem.cpp" />
+    <ClCompile Include="game\RenderSystem.cpp" />
     <ClCompile Include="json\somplejson_demo.cpp" />
     <ClCompile Include="json\JSON.cpp" />
     <ClCompile Include="json\JSONValue.cpp" />
@@ -50,6 +51,7 @@
     <ClInclude Include="json\simplejson_demo.h" />
     <ClInclude Include="json\JSON.h" />
     <ClInclude Include="json\JSONValue.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="sdlutils\sdlutils_demo.h" />
     <ClInclude Include="sdlutils\Font.h" />
     <ClInclude Include="sdlutils\InputHandler.h" />
