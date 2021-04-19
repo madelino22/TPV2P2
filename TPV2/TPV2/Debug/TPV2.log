@@ -1,4 +1,6 @@
-﻿  GameCtrlSystem.cpp
+﻿  Entity.cpp
+  Manager.cpp
+  GameCtrlSystem.cpp
   Game.cpp
   Generando código...
-  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe
+  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\bin\TPV2Debug.exe
