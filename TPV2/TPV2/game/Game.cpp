@@ -11,6 +11,7 @@
 #include "../utils/Vector2D.h"
 #include "RenderSystem.h"
 #include "GameCtrlSystem.h"
+#include "FighterSystem.h"
 Game::Game() {
 	mngr_.reset(new Manager());
 	gameCrtlSystem = nullptr;
@@ -35,9 +36,14 @@ void Game::init() {
 	//mngr_->addComponent<Transform>(ball,
 	//		Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f),
 	//		Vector2D(), 10.0f, 10.0f, 0.0f);
+
+
+	fighterSystem = mngr_->addSystem<FighterSystem>();
 	gameCrtlSystem = mngr_->addSystem<GameCtrlSystem>();
 	renderSystem = mngr_->addSystem<RenderSystem>();
 	dynamic_cast<RenderSystem*>(renderSystem)->getEntities(&(mngr_->getEnteties()));
+
+
 	//for (int i = 0; i != 5000; ++i) renderSystem->update();
 
 
@@ -62,6 +68,8 @@ void Game::start() {
 		}
 
 		gameCrtlSystem->update();
+		fighterSystem->update();
+
 		//mngr_->update();
 		mngr_->refresh();
 

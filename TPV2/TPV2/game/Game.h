@@ -19,5 +19,6 @@ private:
 	std::unique_ptr<Manager> mngr_;
 	System* gameCrtlSystem;
 	System* renderSystem;
+	System* fighterSystem;
 };
 

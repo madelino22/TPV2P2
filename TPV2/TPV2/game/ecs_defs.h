@@ -24,5 +24,6 @@ struct JET;
 //systems
 class GameCtrlSystem;
 class RenderSystem;
+class FighterSystem;
 
-#define _SYS_LIST_ GameCtrlSystem, RenderSystem
+#define _SYS_LIST_ GameCtrlSystem, RenderSystem, FighterSystem

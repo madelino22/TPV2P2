@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="ecs_4\ecs\Entity.cpp" />
     <ClCompile Include="ecs_4\ecs\Manager.cpp" />
+    <ClCompile Include="game\FighterSystem.cpp" />
     <ClCompile Include="game\Game.cpp" />
     <ClCompile Include="game\GameCtrlSystem.cpp" />
     <ClCompile Include="game\RenderSystem.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="ecs_4\ecs\mpl.h" />
     <ClInclude Include="ecs_4\ecs\System.h" />
     <ClInclude Include="game\ecs_defs.h" />
+    <ClInclude Include="game\FighterSystem.h" />
     <ClInclude Include="game\Game.h" />
     <ClInclude Include="game\GameCtrlSystem.h" />
     <ClInclude Include="game\messages.h" />
