@@ -1,14 +1,23 @@
-﻿  FighterSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16,98): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(38,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+﻿  BulletsSystem.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.h(19,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  FighterGunSystem.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterGunSystem.cpp(20,61): warning C4018: '>=': no coinciden signed/unsigned
+  FighterSystem.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.h(19,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16,98): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(38,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
           with
           [
               _Ty=int
           ]
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D,Vector2D,int,int,int>(Entity *,Vector2D &&,Vector2D &&,int &&,int &&,int &&)" que se está compilando
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(16): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D,Vector2D,int,int,int>(Entity *,Vector2D &&,Vector2D &&,int &&,int &&,int &&)" que se está compilando
           with
           [
               T=Transform
           ]
-  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe
+  Game.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\FighterSystem.h(19,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  Generando código...
+  LINK : no se encontró C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\bin\TPV2Debug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\bin\TPV2Debug.exe

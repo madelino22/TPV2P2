@@ -58,7 +58,7 @@ GameState GameCtrlSystem::getGameState()
 
 void GameCtrlSystem::init()
 {
-	estado = NEWGAME;
+	//estado = NEWGAME;
 
 
 

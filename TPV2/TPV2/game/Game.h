@@ -20,5 +20,7 @@ private:
 	System* gameCrtlSystem;
 	System* renderSystem;
 	System* fighterSystem;
+	System* fighterGunSystem;
+	System* bulletsSystem;
 };
 

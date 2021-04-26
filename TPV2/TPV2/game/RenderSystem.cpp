@@ -19,6 +19,7 @@ void RenderSystem::renderEntities()
 
 		 if(manager_->getHandler<JET>() == e) tex_ = &sdlutils().images().at("nave");
 		 else if (manager_->hasGroup<Asteroids>(e)) tex_ = &sdlutils().images().at("Asteroid");
+		 else if (manager_->hasGroup<Bullets>(e)) tex_ = &sdlutils().images().at("fire");
 
 
 		SDL_Rect src_ = { 0,0, tex_->width(), tex_->height() };
