@@ -5,6 +5,8 @@
 void FighterGunSystem::init()
 {
 	tr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
+	bulletsSystem = manager_->getSystem<BulletsSystem>();
+
 }
 void FighterGunSystem::update()
 {
@@ -16,7 +18,7 @@ void FighterGunSystem::update()
 		if (ih().keyDownEvent()) {
 
 			//Si se presiona la s, acelera
-			if (ih().isKeyDown(SDL_SCANCODE_UP)) {
+			if (ih().keyDownEvent()) {
 				if (ih().isKeyDown(SDLK_s) && sdlutils().currRealTime() >= timer + 250) {
 					timer = sdlutils().currRealTime();
 					bulletsSystem->shoot(pos, vel, 50, 50);
