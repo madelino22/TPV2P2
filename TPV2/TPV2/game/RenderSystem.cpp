@@ -2,6 +2,7 @@
 #include "../components/Transform.h"
 #include "../ecs_4/ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
+#include "../components/Generations.h"
 
 RenderSystem::RenderSystem()
 {
@@ -18,7 +19,14 @@ void RenderSystem::renderEntities()
 		SDL_Rect dest = build_sdlrect(tr_->getPos(), tr_->getW(), tr_->getH()); // Rectangulo destino donde se va a dibujar el objeto en pantalla
 
 		 if(manager_->getHandler<JET>() == e) tex_ = &sdlutils().images().at("nave");
-		 else if (manager_->hasGroup<Asteroids>(e)) tex_ = &sdlutils().images().at("Asteroid");
+		 else if (manager_->hasGroup<Asteroids>(e)) {
+			
+			 if(manager_->getComponent<Generations>(e)->isGold())
+				 tex_ = &sdlutils().images().at("asteroideOro");
+			 else
+				 tex_ = &sdlutils().images().at("asteroide");
+
+		 }
 		 else if (manager_->hasGroup<Bullets>(e)) tex_ = &sdlutils().images().at("fire");
 
 

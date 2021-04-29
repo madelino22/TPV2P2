@@ -22,5 +22,6 @@ private:
 	System* fighterSystem;
 	System* fighterGunSystem;
 	System* bulletsSystem;
+	System* asteroidsSystem;
 };
 

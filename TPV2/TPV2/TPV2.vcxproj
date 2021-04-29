@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="ecs_4\ecs\Entity.cpp" />
     <ClCompile Include="ecs_4\ecs\Manager.cpp" />
+    <ClCompile Include="game\AsteroidsSystem.cpp" />
     <ClCompile Include="game\BulletsSystem.cpp" />
     <ClCompile Include="game\FighterGunSystem.cpp" />
     <ClCompile Include="game\FighterSystem.cpp" />
@@ -39,6 +40,7 @@
     <ClCompile Include="utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="components\Generations.h" />
     <ClInclude Include="components\Transform.h" />
     <ClInclude Include="ecs_4\ecs\Component.h" />
     <ClInclude Include="ecs_4\ecs\ecs.h" />
@@ -47,6 +49,7 @@
     <ClInclude Include="ecs_4\ecs\Manager.h" />
     <ClInclude Include="ecs_4\ecs\mpl.h" />
     <ClInclude Include="ecs_4\ecs\System.h" />
+    <ClInclude Include="game\AsteroidsSystem.h" />
     <ClInclude Include="game\BulletsSystem.h" />
     <ClInclude Include="game\ecs_defs.h" />
     <ClInclude Include="game\FighterGunSystem.h" />

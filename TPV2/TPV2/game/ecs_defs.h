@@ -4,10 +4,11 @@
 
 // components -- forward declaration, i.e., assume they are defined somewhere
 class Transform;
+class Generations;
 
 
 #define _CMPS_LIST_  \
-	Transform\
+	Transform, Generations\
 	
 
 // groups
@@ -27,4 +28,5 @@ class RenderSystem;
 class FighterSystem;
 class BulletsSystem;
 class FighterGunSystem;
-#define _SYS_LIST_ GameCtrlSystem, RenderSystem, FighterSystem, BulletsSystem, FighterGunSystem
+class AsteroidsSystem;
+#define _SYS_LIST_ GameCtrlSystem, RenderSystem, FighterSystem, BulletsSystem, FighterGunSystem, AsteroidsSystem

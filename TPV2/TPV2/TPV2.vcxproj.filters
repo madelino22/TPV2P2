@@ -105,6 +105,9 @@
     <ClCompile Include="game\FighterGunSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="game\AsteroidsSystem.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -191,9 +194,6 @@
     <ClInclude Include="game\GameCtrlSystem.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="game\RenderSystem.h">
-      <Filter>Header Files\game</Filter>
-    </ClInclude>
     <ClInclude Include="game\FighterSystem.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
@@ -202,6 +202,15 @@
     </ClInclude>
     <ClInclude Include="game\FighterGunSystem.h">
       <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\AsteroidsSystem.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="game\RenderSystem.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="components\Generations.h">
+      <Filter>Header Files\components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

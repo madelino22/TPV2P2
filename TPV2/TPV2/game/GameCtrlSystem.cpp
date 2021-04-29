@@ -3,7 +3,7 @@
 #include "../sdlutils/SDLUtils.h"
 #include "../components/Transform.h"
 #include "../sdlutils/InputHandler.h"
-
+#include "AsteroidsSystem.h"
 
 
 void GameCtrlSystem::onFighterDeath(int fighterLives)
@@ -63,6 +63,8 @@ void GameCtrlSystem::init()
 
 
 	jetTr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
+
+
 }
 
 void GameCtrlSystem::update()
@@ -71,7 +73,8 @@ void GameCtrlSystem::update()
 		// Al pulsar la tecla espacio se actualiza el estado actual
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE)) {
 
-			
+			manager_->getSystem<AsteroidsSystem>()->addAsteroids(10);
+
 
 			//si se está en un estado distinto de running, es decir en un menú, y se ha pulsado espacio
 			if (estado != RUNNING)
@@ -89,9 +92,9 @@ void GameCtrlSystem::update()
 					// Si el estado es NEWGAME o PAUSED habrá que añadir los componentes de accion al caza para que se pueda volver a jugar
 					//--------->activar movimiento y armas
 					// Ademas, generamos los diez asteroides iniciales
-					for (int x = 0; x < 10; x++) {
-						//-------->generar asteroides en el asteroidSystem
-					}
+					
+					manager_->getSystem<AsteroidsSystem>()->addAsteroids(10);
+
 					// Pasamos a RUNNING
 					estado = RUNNING;
 				}
