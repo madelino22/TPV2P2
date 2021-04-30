@@ -15,6 +15,7 @@ void FighterSystem::init()
 	Entity* fighter = manager_->addEntity();
 	manager_->addComponent<Transform>(fighter, Vector2D(sdlutils().width() / 2, sdlutils().height() / 2), Vector2D(0, 0), 20, 20, 0);
 	manager_->setHandler<JET>(fighter);
+	manager_->setGroup<JET>(fighter,true);
 	tr = manager_->getComponent<Transform>(fighter);
 	bulletsSystem = manager_->getSystem<BulletsSystem>();
 }
@@ -25,7 +26,22 @@ void FighterSystem::update()
 		auto& pos = tr->getPos();
 		auto& vel = tr->getVel();
 		auto r = tr->getRot();
+		auto w = tr->getW();
+		auto h = tr->getH();
 		pos = pos + vel; // Esto lo hacía el update antes del transform
+		if (pos.getX() + w / 2 < 0) {
+			pos.setX(sdlutils().width() - w / 2);
+		}
+		else if (pos.getX() + w / 2 > sdlutils().width()) {
+			pos.setX(-w / 2);
+		}
+
+		if (pos.getY() + h / 2 < 0) {
+			pos.setY(sdlutils().height() - h / 2);
+		}
+		else if (pos.getY() + h / 2 > sdlutils().height()) {
+			pos.setY(-h / 2);
+		}
 		if (ih().keyDownEvent()) {
 
 			//Si se presiona la s, acelera

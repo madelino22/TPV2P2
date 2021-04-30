@@ -53,6 +53,7 @@ void Game::init() {
 	
 	dynamic_cast<RenderSystem*>(renderSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<BulletsSystem*>(bulletsSystem)->getEntities(&(mngr_->getEnteties()));
+	dynamic_cast<AsteroidsSystem*>(asteroidsSystem)->getEntities(&(mngr_->getEnteties()));
 
 
 	
@@ -83,6 +84,7 @@ void Game::start() {
 		fighterSystem->update();
 		bulletsSystem->update();
 		fighterGunSystem->update();
+		asteroidsSystem->update();
 		//asteroidsSystem->update();
 		//mngr_->update();
 		mngr_->refresh();

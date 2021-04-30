@@ -8,7 +8,6 @@ using Point2D = Vector2D;
 void AsteroidsSystem::addAsteroids(int n) {
 	for (int x = 0; x < n; x++) {
 		addAsteroid();
-		std::cout << "GeneraAsteroide";
 	}
 
 }
@@ -86,9 +85,31 @@ void AsteroidsSystem::update() {
 			auto w = tr_asteroide->getW();
 			auto h = tr_asteroide->getH();
 
-			pos = pos + tr_asteroide->getVel();
+			if (manager_->getComponent<Generations>(e)->isGold())
+			{
+				auto& q = manager_->getComponent<Transform>(manager_->getHandler<JET>())->getPos();
+				auto& v = tr_asteroide->getVel();
+				tr_asteroide->setVel(v.rotate(v.angle(q - pos) > 0 ? 1.0f : -1.0f));
+			}
+
+			tr_asteroide->setPos(pos + tr_asteroide->getVel());
 			
 			//salir por el otro lado de la pantalla
+			if (pos.getX() + w / 2 < 0) {
+				pos.setX(sdlutils().width() - w / 2);
+			}
+			else if (pos.getX() + w / 2 > sdlutils().width()) {
+				pos.setX(-w / 2);
+			}
+
+			if (pos.getY() + h / 2 < 0) {
+				pos.setY(sdlutils().height() - h / 2);
+			}
+			else if (pos.getY() + h / 2 > sdlutils().height()) {
+				pos.setY(-h / 2);
+			}
+			
+			
 		}
 	}
 

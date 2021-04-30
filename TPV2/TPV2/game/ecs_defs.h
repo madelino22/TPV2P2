@@ -15,7 +15,8 @@ class Generations;
 
 struct Bullets;
 struct Asteroids;
-#define _GRPS_LIST_  Bullets, Asteroids
+struct JET;
+#define _GRPS_LIST_  Bullets, Asteroids, JET
 
 // handlers
 struct JET;

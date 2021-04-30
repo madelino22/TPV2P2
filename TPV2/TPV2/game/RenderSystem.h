@@ -3,7 +3,7 @@
 #include "../ecs_4/ecs/Entity.h"
 #include "../sdlutils/Texture.h"
 #include <vector>
-
+enum texturas {nave,asteroide,asteroide_oro,bala};
 class RenderSystem :
     public System
 {
@@ -14,9 +14,14 @@ public:
     void renderMessages();// - dibujar el mensaje correspondiente si el juego está parado (como en la práctica 1)
     void update() override;
     void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
+    void renderAsteroid(Texture* tex_, SDL_Rect dest);
 private:
     Transform* tr_;
     const std::vector<Entity*>* entidades;
-    Texture* tex_;
+    std::vector<Texture*> tex_;
+    float timer = 0;
+    SDL_Rect src_;
+    SDL_Rect src_asteroids;
+    int frameTexture = 0;
 };
 
