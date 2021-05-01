@@ -1,4 +1,3 @@
-#pragma once
 
 #pragma once
 #include "../ecs_4/ecs/System.h"
@@ -18,6 +17,6 @@ private:
     Transform* tr;
     float thrust = 0.2;
     float speedLimit = 3;
-    int timer = 0;
+    int lives = 3;
     BulletsSystem* bulletsSystem;
 };

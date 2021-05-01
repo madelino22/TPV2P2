@@ -108,6 +108,9 @@
     <ClCompile Include="game\AsteroidsSystem.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="game\CollisionSystem.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json\JSON.h">
@@ -211,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="components\Generations.h">
       <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="game\CollisionSystem.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

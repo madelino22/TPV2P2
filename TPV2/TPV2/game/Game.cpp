@@ -15,6 +15,7 @@
 #include "BulletsSystem.h"
 #include "FighterGunSystem.h"
 #include "AsteroidsSystem.h"
+#include "CollisionSystem.h"
 
 
 
@@ -50,10 +51,13 @@ void Game::init() {
 	gameCrtlSystem = mngr_->addSystem<GameCtrlSystem>();
 	renderSystem = mngr_->addSystem<RenderSystem>();
 	asteroidsSystem = mngr_->addSystem<AsteroidsSystem>();
+	collisionSystem = mngr_->addSystem<CollisionSystem>();
 	
 	dynamic_cast<RenderSystem*>(renderSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<BulletsSystem*>(bulletsSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<AsteroidsSystem*>(asteroidsSystem)->getEntities(&(mngr_->getEnteties()));
+	dynamic_cast<CollisionSystem*>(collisionSystem)->getEntities(&(mngr_->getEnteties()));
+
 
 
 	
@@ -85,6 +89,7 @@ void Game::start() {
 		bulletsSystem->update();
 		fighterGunSystem->update();
 		asteroidsSystem->update();
+		collisionSystem->update();
 		//asteroidsSystem->update();
 		//mngr_->update();
 		mngr_->refresh();

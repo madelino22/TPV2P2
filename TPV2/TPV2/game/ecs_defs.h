@@ -30,4 +30,5 @@ class FighterSystem;
 class BulletsSystem;
 class FighterGunSystem;
 class AsteroidsSystem;
-#define _SYS_LIST_ GameCtrlSystem, RenderSystem, FighterSystem, BulletsSystem, FighterGunSystem, AsteroidsSystem
+class CollisionSystem;
+#define _SYS_LIST_ GameCtrlSystem, RenderSystem, FighterSystem, BulletsSystem, FighterGunSystem, AsteroidsSystem,CollisionSystem

@@ -27,9 +27,7 @@ void GameCtrlSystem::onFighterDeath(int fighterLives)
 	if (fighterLives > 0) estado = PAUSE;
 	else estado = GAMEOVER;
 
-	jetTr->setRot(0.0f);
-	jetTr->setVel(Vector2D(0, 0));
-	jetTr->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
+	
 
 
 	//Desactivar movimiento y armas

@@ -23,6 +23,7 @@
     <ClCompile Include="ecs_4\ecs\Manager.cpp" />
     <ClCompile Include="game\AsteroidsSystem.cpp" />
     <ClCompile Include="game\BulletsSystem.cpp" />
+    <ClCompile Include="game\CollisionSystem.cpp" />
     <ClCompile Include="game\FighterGunSystem.cpp" />
     <ClCompile Include="game\FighterSystem.cpp" />
     <ClCompile Include="game\Game.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="ecs_4\ecs\System.h" />
     <ClInclude Include="game\AsteroidsSystem.h" />
     <ClInclude Include="game\BulletsSystem.h" />
+    <ClInclude Include="game\CollisionSystem.h" />
     <ClInclude Include="game\ecs_defs.h" />
     <ClInclude Include="game\FighterGunSystem.h" />
     <ClInclude Include="game\FighterSystem.h" />

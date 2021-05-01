@@ -8,7 +8,7 @@
 class BulletsSystem : public System
 {
 public:
-
+	void onCollisionWithAsteroid(Entity* b, Entity* a);
 	void shoot(Vector2D pos, Vector2D vel, double width, double height);
 	void update() override;
 	void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }

@@ -7,7 +7,25 @@
 
 void FighterSystem::onCollisionWithAsteroid(Entity* a)
 {
+
+
+	// El jugador pierde una vida
+	lives--;
+
+	// El caza vuelve al centro de la pantalla con velocidad nula y orientado hacia arriba
+	tr->setRot(0.0f);
+	tr->setVel(Vector2D(0, 0));
+	tr->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
+	// Se eliminan los componentes de accion del caza para que no se pueda mover ni disparar hasta que comience la partida
+	
+	manager_->getSystem<GameCtrlSystem>()->onFighterDeath(lives);
+	
+	manager_->setActive(a, false);
 }
+
+
+
+
 
 void FighterSystem::init()
 {

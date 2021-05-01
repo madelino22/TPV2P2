@@ -5,6 +5,11 @@
 
 
 
+void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
+{
+	manager_->setActive(b, false);
+}
+
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height)
 {
 	//al disparar se crea una nueva entidad que es la bala

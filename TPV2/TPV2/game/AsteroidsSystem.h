@@ -1,6 +1,8 @@
 #pragma once
 #include "../ecs_4/ecs/System.h"
 #include <vector>
+#include "../ecs_4/ecs/Entity.h"
+#include "../components/Generations.h"
 
 
 class Entity;
@@ -14,17 +16,19 @@ public:
 	// se puede usar para tener comportamientos distintos depende del tipo de
 	// bala, etc.)
 	// - si no hay más asteroides avisar al GameCtrlSystem
-	void onCollisionWithBullet(Entity* a, Entity* b) {};
+	void onCollisionWithBullet(Entity* a, Entity* b) ;
 	// - si el juego está parado no hacer nada.
 	// - mover los asteroides como en la práctica 1.
 	void update() override;
 
 	void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
 
+	
+
 private:
 	int numOfAsteroids_;
 	void addAsteroid();
 	const std::vector<Entity*>* entidades;
-
+	void divideAsteroide(Entity* a, Generations* gen);
 
 };

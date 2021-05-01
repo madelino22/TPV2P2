@@ -1,7 +1,7 @@
 #include "AsteroidsSystem.h"
 #include "../ecs_4/ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
-#include "../components/Generations.h"
+#include "GameCtrlSystem.h"
 
 using Point2D = Vector2D;
 
@@ -72,6 +72,56 @@ void AsteroidsSystem::addAsteroid()
 	numOfAsteroids_++;
 	
 }
+
+
+void AsteroidsSystem::divideAsteroide(Entity* as, Generations* genPadre)
+{
+	Entity* asteroide = manager_->addEntity();
+	// Se coge el transform del asteroide del que proviene el nuevo
+	auto as_tr = manager_->getComponent<Transform>(as);
+	// La posición y velocidad del nuevo asteroide seran iguales a las del que proviene
+	Vector2D p = as_tr->getPos();
+	Vector2D v = as_tr->getVel();
+	int w = as_tr->getW();
+	// Se calcula su tamaño en base a las divisiones restantes
+	auto size = 10.0f + 5.0f * genPadre->getGenerations();
+	// Se calcula la rotación de forma aleatoria
+	int r = sdlutils().rand().nextInt(0, 360);
+	manager_->addComponent<Transform>(asteroide, p + v.rotate(r) * 2 * w, v.rotate(r) * 1.1f, size, size, 0.0f);
+	// Se podrá dividir una vez menos que su predecesor
+	manager_->addComponent<Generations>(asteroide, genPadre->getGenerations() - 1);
+	// Si el antiguo asteroide tenia el componente follow el nuevo tambien lo tendra, y ademas habra que usar el sprite dorado
+	if (genPadre->isGold())manager_->getComponent<Generations>(asteroide)->setGold();
+	// Si no lo tenía, al nuevo no se le añade y se usa el sprite de asteroide normal
+
+	manager_->setGroup<Asteroids>(asteroide, true);
+
+	// Se actualiza el numero de asteroides
+	numOfAsteroids_++;
+}
+
+void AsteroidsSystem::onCollisionWithBullet(Entity* a, Entity* b)
+{
+	// Se produce un sonido
+	sdlutils().soundEffects().at("bangSmall").play();
+	Generations* gen = manager_->getComponent<Generations>(a); 
+	// Si al asteroide todavía le quedaban divisiones, se divide en dos asteroides con una generación menos
+	if (gen->getGenerations() > 0)
+	{
+		divideAsteroide(a, gen);
+		divideAsteroide(a, gen);
+	}
+	// Se desactiva el asteroide y se actualiza el numero total de los mismos
+	manager_->setGroup<Asteroids>(a, false);
+	//Desactiva el asteroide
+	manager_->setActive(a, false);
+
+	numOfAsteroids_--;
+
+	if (numOfAsteroids_ <= 0) manager_->getSystem<GameCtrlSystem>()->onAsteroidsExtinction();
+
+}
+
 
 void AsteroidsSystem::update() {
 	
