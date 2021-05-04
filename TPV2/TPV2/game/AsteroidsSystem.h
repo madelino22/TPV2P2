@@ -22,11 +22,11 @@ public:
 	void update() override;
 
 	void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
-
+	virtual void receive(const Message& m);
 	
 
 private:
-	int numOfAsteroids_;
+	int numOfAsteroids_ = 0;
 	void addAsteroid();
 	const std::vector<Entity*>* entidades;
 	void divideAsteroide(Entity* a, Generations* gen);

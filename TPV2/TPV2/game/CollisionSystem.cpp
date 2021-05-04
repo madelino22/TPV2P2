@@ -2,7 +2,6 @@
 #include "../ecs_4/ecs/Manager.h"
 #include "../utils/Collisions.h"
 #include "AsteroidsSystem.h"
-#include "FighterSystem.h"
 
 void CollisionSystem::update() {
 	int n = (*entidades).size();
@@ -21,8 +20,13 @@ void CollisionSystem::update() {
 					if (Collisions::collidesWithRotation(aTR->getPos(), aTR->getW(), aTR->getH(), aTR->getRot(),
 						bTR->getPos(), bTR->getW(), bTR->getH(), bTR->getRot()))
 					{
-						manager_->getSystem<AsteroidsSystem>()->onCollisionWithBullet((*entidades)[i],(*entidades)[j]);
-						manager_->getSystem<BulletsSystem>()->onCollisionWithAsteroid((*entidades)[j],(*entidades)[i]);
+						Message astBullColl;
+						astBullColl.id_ = ASTEROID_COLLISION_WITH_BULLET;
+						astBullColl.entitiesCol.asteroid = (*entidades)[i];
+						astBullColl.entitiesCol.bullet = (*entidades)[j];
+						manager_->send(astBullColl);
+						//manager_->getSystem<AsteroidsSystem>()->onCollisionWithBullet((*entidades)[i],(*entidades)[j]);
+						//manager_->getSystem<BulletsSystem>()->onCollisionWithAsteroid((*entidades)[j],(*entidades)[i]);
 
 
 
@@ -49,7 +53,11 @@ void CollisionSystem::update() {
 					if (Collisions::collidesWithRotation(aTR->getPos(), aTR->getW(), aTR->getH(), aTR->getRot(),
 						jTR->getPos(), jTR->getW(), jTR->getH(), jTR->getRot()))
 					{
-						manager_->getSystem<FighterSystem>()->onCollisionWithAsteroid((*entidades)[i]);
+						Message collisionWithJet;
+						collisionWithJet.id_ = JET_COLLISION_WITH_ASTEROID;
+						collisionWithJet.jetCol.entity = (*entidades)[i];
+						manager_->send(collisionWithJet);
+							//getSystem<FighterSystem>()->onCollisionWithAsteroid((*entidades)[i]);
 					}
 				}
 

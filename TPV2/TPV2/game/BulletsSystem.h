@@ -13,6 +13,7 @@ public:
 	void update() override;
 	void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
 	void init() override;
+	virtual void receive(const Message& m);
 private:
 	Transform* tr_; // Tranform de la nave
 	const std::vector<Entity*>* entidades;

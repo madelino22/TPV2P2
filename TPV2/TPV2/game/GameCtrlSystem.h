@@ -15,6 +15,7 @@ public:
     void init() override;
     void update() override;
     std::vector<Entity*>* getEntidades() { return &entidades; }
+    virtual void receive(const Message& m);
 private:
     
     GameState estado = RUNNING;

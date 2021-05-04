@@ -118,8 +118,12 @@ void AsteroidsSystem::onCollisionWithBullet(Entity* a, Entity* b)
 
 	numOfAsteroids_--;
 
-	if (numOfAsteroids_ <= 0) manager_->getSystem<GameCtrlSystem>()->onAsteroidsExtinction();
-
+	if (numOfAsteroids_ <= 0) {
+		Message noAsteroidsLeft;
+		noAsteroidsLeft.id_ = ASTEROIDS_DESTROYED;
+		manager_->send(noAsteroidsLeft);
+	}
+	std::cout << numOfAsteroids_ << "\n";
 }
 
 
@@ -163,6 +167,12 @@ void AsteroidsSystem::update() {
 		}
 	}
 
+}
+
+void AsteroidsSystem::receive(const Message& m)
+{
+	if (m.id_ == ASTEROID_COLLISION_WITH_BULLET)
+		onCollisionWithBullet(m.entitiesCol.asteroid, m.entitiesCol.bullet);
 }
 
 //

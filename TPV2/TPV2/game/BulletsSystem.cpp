@@ -60,3 +60,9 @@ void BulletsSystem::init()
 
 	tr_ = manager_->getComponent<Transform>(manager_->getHandler<JET>());
 }
+
+void BulletsSystem::receive(const Message& m)
+{
+	if (m.id_ == ASTEROID_COLLISION_WITH_BULLET)
+		onCollisionWithAsteroid(m.entitiesCol.bullet, m.entitiesCol.asteroid);
+}

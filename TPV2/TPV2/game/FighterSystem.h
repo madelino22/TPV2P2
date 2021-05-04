@@ -13,6 +13,7 @@ public:
     void onCollisionWithAsteroid(Entity* a);
     void init() override;
     void update() override;
+    virtual void receive(const Message&);
 private:
     Transform* tr;
     float thrust = 0.2;

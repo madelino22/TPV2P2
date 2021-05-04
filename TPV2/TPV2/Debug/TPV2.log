@@ -1,29 +1,19 @@
-﻿  BulletsSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.h(18,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-  CollisionSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.h(18,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-  FighterSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.h(18,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(34,98): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(34,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Manager.h(38,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
-          with
-          [
-              _Ty=int
-          ]
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.cpp(34): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D,Vector2D,int,int,int>(Entity *,Vector2D &&,Vector2D &&,int &&,int &&,int &&)" que se está compilando
-          with
-          [
-              T=Transform
-          ]
-  Game.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterSystem.h(18,18): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-  GameCtrlSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-  Generando código...
-  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe
+﻿  AsteroidsSystem.cpp
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.h(8,13): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(28,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(31,92): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(34,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(37,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(44,82): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(44,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(46,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(46,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(51,90): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(85,8): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(90,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(90,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\TPV2\game\AsteroidsSystem.cpp(90,81): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  TPV2.vcxproj -> C:\Users\roy_x\OneDrive\Escritorio\GitHub\TPV2P2\TPV2\bin\TPV2Debug.exe

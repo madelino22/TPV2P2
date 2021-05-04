@@ -100,3 +100,13 @@ void GameCtrlSystem::update()
 		}
 	}
 }
+
+void GameCtrlSystem::receive(const Message& m)
+{
+	if (m.id_ == JET_DESTROYED)
+		onFighterDeath(m.jetDest.lives);
+	else if (m.id_ == ASTEROIDS_DESTROYED)
+	{
+		onAsteroidsExtinction();
+	}
+}
