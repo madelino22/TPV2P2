@@ -9,12 +9,11 @@
 void GameCtrlSystem::onFighterDeath(int fighterLives)
 {
 
-	for (Entity* e : entidades) {
+	for (Entity* e : *entidades) {
 		if (manager_->hasGroup<Bullets>(e) ) {
 			manager_->setActive(e, false);
 		}
 		if (manager_->hasGroup<Asteroids>(e)) {
-			//asteroidsCount--;//cuidado con esto que a lo mejor lanza el estado de ganar
 			manager_->setActive(e, false);
 		}
 	}
@@ -36,11 +35,13 @@ void GameCtrlSystem::onFighterDeath(int fighterLives)
 
 void GameCtrlSystem::onAsteroidsExtinction()
 {
-	for (Entity* e : entidades) {
+	for (Entity* e : *entidades) {
 		if (manager_->hasGroup<Bullets>(e)) {
 			manager_->setActive(e, false);
 		}
+		
 	}
+
 
 	jetTr->setRot(0.0f);
 	jetTr->setVel(Vector2D(0, 0));
@@ -58,8 +59,6 @@ void GameCtrlSystem::init()
 {
 	//estado = NEWGAME;
 
-
-
 	jetTr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
 
 
@@ -67,12 +66,12 @@ void GameCtrlSystem::init()
 
 void GameCtrlSystem::update()
 {
+	
 	if (ih().keyDownEvent()) {
 		// Al pulsar la tecla espacio se actualiza el estado actual
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE)) {
 
-			manager_->getSystem<AsteroidsSystem>()->addAsteroids(10);
-
+			
 
 			//si se está en un estado distinto de running, es decir en un menú, y se ha pulsado espacio
 			if (estado != RUNNING)
@@ -81,7 +80,6 @@ void GameCtrlSystem::update()
 				{
 					//al ganar o perder hay que poner las vidas como al principio de la partida
 					//-------->Resetear vidas en jetsystem
-
 					//una vez restablecidos los valor se cambia el estado a pausa
 					estado = PAUSE;
 				}
@@ -109,4 +107,5 @@ void GameCtrlSystem::receive(const Message& m)
 	{
 		onAsteroidsExtinction();
 	}
+	
 }

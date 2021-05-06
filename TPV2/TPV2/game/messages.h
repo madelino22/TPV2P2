@@ -24,6 +24,11 @@ struct ASTEROID_COLLISION_WITH_BULLET_MESSAGE {
 	Entity* bullet;
 	Entity* asteroid;
 };
+
+struct ROUND_OVER_MESSAGE {
+};
+
+
 struct Message {
 	MsgId id_;
 	union {
@@ -31,6 +36,7 @@ struct Message {
 		JET_COLLISION_WITH_ASTEROID_MESSAGE jetCol;
 		ASTEROID_COLLISION_WITH_BULLET_MESSAGE entitiesCol;
 		ASTEROIDS_DESTROYED_MESSAGE a;
+		ROUND_OVER_MESSAGE round_over;
 		//SomeOtherMsg otherMsg_; // just for the example
 	};
 };

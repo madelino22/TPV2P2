@@ -22,6 +22,7 @@ public:
 	void update() override;
 
 	void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
+	void resetAsteroids() { numOfAsteroids_ = 0; }
 	virtual void receive(const Message& m);
 	
 
@@ -30,5 +31,6 @@ private:
 	void addAsteroid();
 	const std::vector<Entity*>* entidades;
 	void divideAsteroide(Entity* a, Generations* gen);
+	float timer = 0;
 
 };

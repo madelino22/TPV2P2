@@ -15,10 +15,16 @@ void FighterSystem::onCollisionWithAsteroid(Entity* a)
 	tr->setVel(Vector2D(0, 0));
 	tr->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
 	// Se eliminan los componentes de accion del caza para que no se pueda mover ni disparar hasta que comience la partida
+	
 	Message jet_destroyed;
 	jet_destroyed.id_ = JET_DESTROYED;
 	jet_destroyed.jetDest.lives = lives;
 	manager_->send(jet_destroyed);
+	
+	
+	
+
+
 	manager_->setActive(a, false);
 }
 

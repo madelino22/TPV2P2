@@ -57,6 +57,7 @@ void Game::init() {
 	dynamic_cast<BulletsSystem*>(bulletsSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<AsteroidsSystem*>(asteroidsSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<CollisionSystem*>(collisionSystem)->getEntities(&(mngr_->getEnteties()));
+	dynamic_cast<GameCtrlSystem*>(gameCrtlSystem)->getEntities(&(mngr_->getEnteties()));
 
 
 

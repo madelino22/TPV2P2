@@ -14,13 +14,13 @@ public:
     GameState getGameState();
     void init() override;
     void update() override;
-    std::vector<Entity*>* getEntidades() { return &entidades; }
+    void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
     virtual void receive(const Message& m);
 private:
     
-    GameState estado = RUNNING;
+    GameState estado = NEWGAME;
     Transform* jetTr;
-    std::vector<Entity*> entidades;
-    
+    const std::vector<Entity*>* entidades;
+
 };
 

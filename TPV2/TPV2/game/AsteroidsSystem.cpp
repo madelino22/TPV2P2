@@ -129,6 +129,16 @@ void AsteroidsSystem::onCollisionWithBullet(Entity* a, Entity* b)
 
 void AsteroidsSystem::update() {
 	
+	if (manager_->getSystem<GameCtrlSystem>()->getGameState() == RUNNING)
+	{
+		if (sdlutils().currRealTime() >= timer + 10000) {
+			timer = sdlutils().currRealTime();
+			addAsteroid();
+		}
+
+	}
+
+
 	for (Entity* e : *entidades)
 	{
 		if (manager_->hasGroup<Asteroids>(e))
@@ -173,6 +183,10 @@ void AsteroidsSystem::receive(const Message& m)
 {
 	if (m.id_ == ASTEROID_COLLISION_WITH_BULLET)
 		onCollisionWithBullet(m.entitiesCol.asteroid, m.entitiesCol.bullet);
+	else if (m.id_ == JET_DESTROYED) {
+		resetAsteroids();
+	}
+	
 }
 
 //
