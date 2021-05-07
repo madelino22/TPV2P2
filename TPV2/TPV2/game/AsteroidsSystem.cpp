@@ -14,7 +14,6 @@ void AsteroidsSystem::addAsteroids(int n) {
 
 void AsteroidsSystem::addAsteroid()
 {
-
  	Entity* asteroide = manager_->addEntity();
 	Generations* gen = manager_->addComponent<Generations>(asteroide);
 	//se guarda gen para ponerle el tamaño inicial al asteroide
@@ -70,7 +69,8 @@ void AsteroidsSystem::addAsteroid()
 
 	//se actualiza el contador de asteroides
 	numOfAsteroids_++;
-	
+	std::cout << "Added: " << numOfAsteroids_ << "\n";
+
 }
 
 
@@ -98,6 +98,8 @@ void AsteroidsSystem::divideAsteroide(Entity* as, Generations* genPadre)
 
 	// Se actualiza el numero de asteroides
 	numOfAsteroids_++;
+
+	std::cout << "Added div" << numOfAsteroids_ << "\n";
 }
 
 void AsteroidsSystem::onCollisionWithBullet(Entity* a, Entity* b)
@@ -123,7 +125,7 @@ void AsteroidsSystem::onCollisionWithBullet(Entity* a, Entity* b)
 		noAsteroidsLeft.id_ = ASTEROIDS_DESTROYED;
 		manager_->send(noAsteroidsLeft);
 	}
-	std::cout << numOfAsteroids_ << "\n";
+	std::cout << "Destroyed" <<numOfAsteroids_ << "\n";
 }
 
 

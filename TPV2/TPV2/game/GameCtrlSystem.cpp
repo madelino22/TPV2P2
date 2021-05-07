@@ -26,7 +26,10 @@ void GameCtrlSystem::onFighterDeath(int fighterLives)
 	if (fighterLives > 0) estado = PAUSE;
 	else estado = GAMEOVER;
 
-	
+	Message cambioDeEstado;
+	cambioDeEstado.id_ = STATE_CHANGED;
+	cambioDeEstado.state_changed.state = estado;
+	manager_->send(cambioDeEstado);
 
 
 	//Desactivar movimiento y armas
@@ -47,7 +50,12 @@ void GameCtrlSystem::onAsteroidsExtinction()
 	jetTr->setVel(Vector2D(0, 0));
 	jetTr->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
 
-	//Desactivar movimiento y armas
+	estado = WON;
+
+	Message cambioDeEstado;
+	cambioDeEstado.id_ = STATE_CHANGED;
+	cambioDeEstado.state_changed.state = estado;
+	manager_->send(cambioDeEstado);
 }
 
 GameState GameCtrlSystem::getGameState()
@@ -60,12 +68,14 @@ void GameCtrlSystem::init()
 	//estado = NEWGAME;
 
 	jetTr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
+	
 
 
 }
 
 void GameCtrlSystem::update()
 {
+
 	
 	if (ih().keyDownEvent()) {
 		// Al pulsar la tecla espacio se actualiza el estado actual
@@ -81,7 +91,7 @@ void GameCtrlSystem::update()
 					//al ganar o perder hay que poner las vidas como al principio de la partida
 					//-------->Resetear vidas en jetsystem
 					//una vez restablecidos los valor se cambia el estado a pausa
-					estado = PAUSE;
+					estado = NEWGAME;
 				}
 				else
 				{
@@ -89,14 +99,23 @@ void GameCtrlSystem::update()
 					//--------->activar movimiento y armas
 					// Ademas, generamos los diez asteroides iniciales
 					
-					manager_->getSystem<AsteroidsSystem>()->addAsteroids(10);
+					manager_->getSystem<AsteroidsSystem>()->addAsteroids(2);
 
 					// Pasamos a RUNNING
 					estado = RUNNING;
 				}
+
+				Message cambioDeEstado;
+				cambioDeEstado.id_ = STATE_CHANGED;
+				cambioDeEstado.state_changed.state = estado;
+				manager_->send(cambioDeEstado);
 			}
+
+
 		}
 	}
+
+
 }
 
 void GameCtrlSystem::receive(const Message& m)

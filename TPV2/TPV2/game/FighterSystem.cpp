@@ -107,4 +107,7 @@ void FighterSystem::update()
 void FighterSystem::receive(const Message& m)
 {
 	if (m.id_ == JET_COLLISION_WITH_ASTEROID) onCollisionWithAsteroid(m.jetCol.entity);
+	else if (m.id_ == STATE_CHANGED) {
+		if (m.state_changed.state == NEWGAME) lives = 3;
+	}
 }

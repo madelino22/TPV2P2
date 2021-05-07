@@ -19,7 +19,7 @@ void FighterGunSystem::update()
 
 			//Si se presiona la s, acelera
 			if (ih().keyDownEvent()) {
-				if (ih().isKeyDown(SDLK_s) && sdlutils().currRealTime() >= timer + 25) {
+				if (ih().isKeyDown(SDLK_s) && sdlutils().currRealTime() >= timer + 250) {
 					timer = sdlutils().currRealTime();
 					bulletsSystem->shoot(pos, vel, 50, 50);
 				}

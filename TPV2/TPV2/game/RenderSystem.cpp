@@ -3,6 +3,7 @@
 #include "../ecs_4/ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../components/Generations.h"
+#include "GameCtrlSystem.h"
 
 RenderSystem::RenderSystem()
 {
@@ -12,10 +13,23 @@ RenderSystem::RenderSystem()
 	tex_.push_back(&sdlutils().images().at("asteroide"));
 	tex_.push_back(&sdlutils().images().at("asteroideOro"));
 	tex_.push_back(&sdlutils().images().at("fire"));
+
+	NEWGAMEText = &sdlutils().msgs().at("NEWGAME");
+	PAUSEDText = &sdlutils().msgs().at("PAUSED");
+	WINNERText = &sdlutils().msgs().at("WINNER");
+	GAMEOVERText = &sdlutils().msgs().at("GAMEOVER");
+
+	healthText = &sdlutils().images().at("heart");
+	menuText = NEWGAMEText;
+
+
 }
 
 void RenderSystem::renderEntities()
 {
+
+	
+
 	for (Entity* e : *entidades)
 	{
 		 tr_ = manager_->getComponent<Transform>(e);
@@ -65,20 +79,48 @@ void RenderSystem::renderAsteroid(Texture* tex_, SDL_Rect dest)
 	}
 	tex_->render(src_asteroids, dest, tr_->getRot());
 }
+void RenderSystem::receive(const Message& m)
+{
+	if (m.id_ == JET_DESTROYED)
+	{
+		health = m.jetDest.lives;
+		if (m.jetDest.lives <= 0) menuText = GAMEOVERText;
+		else menuText = PAUSEDText;
+	}
+	else if (m.id_ == ASTEROIDS_DESTROYED)
+	{
+		menuText = WINNERText;
+	}
+	else if (m.id_ == STATE_CHANGED && m.state_changed.state == NEWGAME) {
+		menuText = NEWGAMEText;
+		health = 3;
+	}
+
+}
 void RenderSystem::renderHUD()
 {
-
+	src_.w = healthText->width();
+	src_.h = healthText->height();
+	Vector2D pos(0, 0);
+	SDL_Rect dest = build_sdlrect(pos, 30, 30);
+	for (int i = 0; i < health; ++i)
+	{
+		healthText->render(src_, dest, 0);
+		//Cada vez que pinta uno cambia la posición x del siguiente
+		dest.x = dest.x + dest.w + 5;
+	}
 }
 
 void RenderSystem::renderMessages()
 {
+	menuText->render(200, 200);
 }
 
 void RenderSystem::update()
 {
-	// if (state == RUNNING)
+	
 	renderEntities();
-	///*else*/ renderMessages();
-	//renderHUD();
+	if (manager_->getSystem<GameCtrlSystem>()->getGameState() != RUNNING) renderMessages();
+	renderHUD();
 	
 }

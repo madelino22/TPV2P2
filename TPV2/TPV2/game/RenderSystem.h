@@ -15,6 +15,8 @@ public:
     void update() override;
     void getEntities(const std::vector<Entity*>* ent) { entidades = ent; }
     void renderAsteroid(Texture* tex_, SDL_Rect dest);
+    virtual void receive(const Message& m);
+
 private:
     Transform* tr_;
     const std::vector<Entity*>* entidades;
@@ -23,5 +25,12 @@ private:
     SDL_Rect src_;
     SDL_Rect src_asteroids;
     int frameTexture = 0;
+    Texture* NEWGAMEText;
+    Texture* PAUSEDText;
+    Texture* WINNERText;
+    Texture* GAMEOVERText;
+    Texture* menuText;
+    Texture* healthText;
+    int health = 3;
 };
 

@@ -17,7 +17,7 @@ public:
 	// bala, etc.)
 	// - si no hay más asteroides avisar al GameCtrlSystem
 	void onCollisionWithBullet(Entity* a, Entity* b) ;
-	// - si el juego está parado no hacer nada.
+	// - si el juego eonCollisionWithBulletstá parado no hacer nada.
 	// - mover los asteroides como en la práctica 1.
 	void update() override;
 
