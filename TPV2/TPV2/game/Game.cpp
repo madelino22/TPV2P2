@@ -53,6 +53,8 @@ void Game::init() {
 	asteroidsSystem = mngr_->addSystem<AsteroidsSystem>();
 	collisionSystem = mngr_->addSystem<CollisionSystem>();
 	
+
+	//espera a que esté contruido las entidades para pasar el puntero a los sistemas
 	dynamic_cast<RenderSystem*>(renderSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<BulletsSystem*>(bulletsSystem)->getEntities(&(mngr_->getEnteties()));
 	dynamic_cast<AsteroidsSystem*>(asteroidsSystem)->getEntities(&(mngr_->getEnteties()));

@@ -17,7 +17,7 @@ void FighterGunSystem::update()
 		auto r = tr->getRot();
 		if (ih().keyDownEvent()) {
 
-			//Si se presiona la s, acelera
+			//Si se presiona la s, dispara
 			if (ih().keyDownEvent()) {
 				if (ih().isKeyDown(SDLK_s) && sdlutils().currRealTime() >= timer + 250) {
 					timer = sdlutils().currRealTime();

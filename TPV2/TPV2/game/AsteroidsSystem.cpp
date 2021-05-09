@@ -133,6 +133,7 @@ void AsteroidsSystem::update() {
 	
 	if (manager_->getSystem<GameCtrlSystem>()->getGameState() == RUNNING)
 	{
+		//añade un asteroide periodicamente 
 		if (sdlutils().currRealTime() >= timer + 10000) {
 			timer = sdlutils().currRealTime();
 			addAsteroid();
@@ -141,6 +142,7 @@ void AsteroidsSystem::update() {
 	}
 
 
+	//actualiza el movimiento del asteroide
 	for (Entity* e : *entidades)
 	{
 		if (manager_->hasGroup<Asteroids>(e))
@@ -151,6 +153,7 @@ void AsteroidsSystem::update() {
 			auto w = tr_asteroide->getW();
 			auto h = tr_asteroide->getH();
 
+			//si es de oro sigue al caza
 			if (manager_->getComponent<Generations>(e)->isGold())
 			{
 				auto& q = manager_->getComponent<Transform>(manager_->getHandler<JET>())->getPos();
@@ -186,38 +189,10 @@ void AsteroidsSystem::receive(const Message& m)
 	if (m.id_ == ASTEROID_COLLISION_WITH_BULLET)
 		onCollisionWithBullet(m.entitiesCol.asteroid, m.entitiesCol.bullet);
 	else if (m.id_ == JET_DESTROYED) {
+		//cada vez que se destruye el caza se destruyen los asteroides asi que hay que actualizar el contador
 		resetAsteroids();
 	}
 	
 }
 
-//
-//void divideAsteroide(Entity* as, int gen)
-//{
-//	Entity* asteroide = entity_->getMngr()->addEntity();
-//	// Se coge el transform del asteroide del que proviene el nuevo
-//	auto as_tr = as->getComponent<Transform>();
-//	// La posición y velocidad del nuevo asteroide seran iguales a las del que proviene
-//	Vector2D p = as_tr->getPos();
-//	Vector2D v = as_tr->getVel();
-//	int w = as_tr->getW();
-//	// Se calcula su tamaño en base a las divisiones restantes
-//	auto size = 10.0f + 5.0f * gen;
-//	// Se calcula la rotación de forma aleatoria
-//	int r = sdlutils().rand().nextInt(0, 360);
-//	asteroide->addComponent<Transform>(p + v.rotate(r) * 2 * w, v.rotate(r) * 1.1f, size, size, 0.0f);
-//	// Se podrá dividir una vez menos que su predecesor
-//	asteroide->addComponent<Generations>(gen - 1);
-//	asteroide->addComponent<ShowAtOppositeSide>();
-//	// Si el antiguo asteroide tenia el componente follow el nuevo tambien lo tendra, y ademas habra que usar el sprite dorado
-//	if (as->hasComponent<Follow>())
-//	{
-//		asteroide->addComponent<Follow>();
-//		asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroideOro"), 5, 6, 0, 0);
-//	}
-//	// Si no lo tenía, al nuevo no se le añade y se usa el sprite de asteroide normal
-//	else asteroide->addComponent<FramedImage>(&sdlutils().images().at("asteroide"), 5, 6, 0, 0);
-//	asteroide->setGroup<Asteroids>(true);
-//	// Se actualiza el numero de asteroides
-//	numAsteroides++;
-//}
+

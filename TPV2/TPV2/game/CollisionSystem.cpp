@@ -25,26 +25,7 @@ void CollisionSystem::update() {
 						astBullColl.entitiesCol.asteroid = (*entidades)[i];
 						astBullColl.entitiesCol.bullet = (*entidades)[j];
 						manager_->send(astBullColl);
-						//manager_->getSystem<AsteroidsSystem>()->onCollisionWithBullet((*entidades)[i],(*entidades)[j]);
-						//manager_->getSystem<BulletsSystem>()->onCollisionWithAsteroid((*entidades)[j],(*entidades)[i]);
-
-
-
-						//todo esto lo hace el gamectrlsystem a través de la llamada a onCollisionWithBullet
-						//if (entientidadesty_->getComponent<AsteroidsManager>()->getNumAsteroides() == 0)
-						//{
-						//	//si ya no quedan astaroides se gana la partida y se restablecen todas las variables
-						//	entity_->getComponent<State>()->changeState(State::WON);
-						//	auto tr_ = jet->getComponent<Transform>();
-						//	tr_->setRot(0.0f);
-						//	tr_->setVel(Vector2D(0, 0));
-						//	tr_->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
-
-						//	//Además se quitan las componenten que hacen que se mueva en el menu para que no se mueva,
-						//	//luego, al cargar otra vez partida, se le vuelven a añadir
-						//	jet->removeComponent<FighterCtrl>();
-						//	jet->removeComponent<Gun>();
-						//}
+						
 					}
 				}
 				else if ((*entidades)[j] == manager_->getHandler<JET>()) // Choque con la nave

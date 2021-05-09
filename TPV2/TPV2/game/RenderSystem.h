@@ -3,7 +3,7 @@
 #include "../ecs_4/ecs/Entity.h"
 #include "../sdlutils/Texture.h"
 #include <vector>
-enum texturas {nave,asteroide,asteroide_oro,bala};
+enum texturas {nave,asteroide,asteroide_oro,bala, heart};
 class RenderSystem :
     public System
 {
@@ -30,7 +30,6 @@ private:
     Texture* WINNERText;
     Texture* GAMEOVERText;
     Texture* menuText;
-    Texture* healthText;
     int health = 3;
 };
 

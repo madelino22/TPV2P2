@@ -6,6 +6,7 @@
 #include "AsteroidsSystem.h"
 
 
+//cuando el jet muere se encarga de desactivar todas las balas y asteroides, se llama a este método al recibir un mensaje
 void GameCtrlSystem::onFighterDeath(int fighterLives)
 {
 
@@ -26,18 +27,22 @@ void GameCtrlSystem::onFighterDeath(int fighterLives)
 	if (fighterLives > 0) estado = PAUSE;
 	else estado = GAMEOVER;
 
+
+	//como cambia el estado lanza  el mensaje de estado cambiado
 	Message cambioDeEstado;
 	cambioDeEstado.id_ = STATE_CHANGED;
 	cambioDeEstado.state_changed.state = estado;
 	manager_->send(cambioDeEstado);
 
-
-	//Desactivar movimiento y armas
 	
 }
 
+
 void GameCtrlSystem::onAsteroidsExtinction()
 {
+
+	//al acabarse todos los asteroides se gana y se desactivan todas las balas y se resetea al jet
+
 	for (Entity* e : *entidades) {
 		if (manager_->hasGroup<Bullets>(e)) {
 			manager_->setActive(e, false);
@@ -50,6 +55,8 @@ void GameCtrlSystem::onAsteroidsExtinction()
 	jetTr->setVel(Vector2D(0, 0));
 	jetTr->setPos(Vector2D(sdlutils().width() / 2.0f, sdlutils().height() / 2.0f));
 
+
+	//como cambia el estado lanza  el mensaje de estado cambiado
 	estado = WON;
 
 	Message cambioDeEstado;
@@ -65,8 +72,8 @@ GameState GameCtrlSystem::getGameState()
 
 void GameCtrlSystem::init()
 {
-	//estado = NEWGAME;
-
+	
+	//recibe el transform del jet para tenerle mejor controlado
 	jetTr = manager_->getComponent<Transform>(manager_->getHandler<JET>());
 	
 
@@ -76,7 +83,7 @@ void GameCtrlSystem::init()
 void GameCtrlSystem::update()
 {
 
-	
+	//Recoge el input de teclado para el cambio de estado
 	if (ih().keyDownEvent()) {
 		// Al pulsar la tecla espacio se actualiza el estado actual
 		if (ih().isKeyDown(SDL_SCANCODE_SPACE)) {
@@ -88,23 +95,22 @@ void GameCtrlSystem::update()
 			{
 				if (estado == GAMEOVER || estado == WON)
 				{
-					//al ganar o perder hay que poner las vidas como al principio de la partida
-					//-------->Resetear vidas en jetsystem
-					//una vez restablecidos los valor se cambia el estado a pausa
 					estado = NEWGAME;
 				}
 				else
 				{
-					// Si el estado es NEWGAME o PAUSED habrá que añadir los componentes de accion al caza para que se pueda volver a jugar
-					//--------->activar movimiento y armas
-					// Ademas, generamos los diez asteroides iniciales
 					
-					manager_->getSystem<AsteroidsSystem>()->addAsteroids(2);
+					// Generamos los diez asteroides iniciales
+					
+					manager_->getSystem<AsteroidsSystem>()->addAsteroids(10);
 
 					// Pasamos a RUNNING
 					estado = RUNNING;
 				}
 
+
+
+				//como cambia el estado lanza  el mensaje de estado cambiado
 				Message cambioDeEstado;
 				cambioDeEstado.id_ = STATE_CHANGED;
 				cambioDeEstado.state_changed.state = estado;
@@ -118,8 +124,13 @@ void GameCtrlSystem::update()
 
 }
 
+
+
 void GameCtrlSystem::receive(const Message& m)
 {
+
+	//Se pueden recibir dos mensajes, la muerte del jet, que si es la tercera llevará al estado newgame, si no al pause, y 
+	//el de la destrucción de todo slos asteroides que lleva al estado won
 	if (m.id_ == JET_DESTROYED)
 		onFighterDeath(m.jetDest.lives);
 	else if (m.id_ == ASTEROIDS_DESTROYED)

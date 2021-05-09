@@ -7,6 +7,7 @@
 
 void BulletsSystem::onCollisionWithAsteroid(Entity* b, Entity* a)
 {
+	//lo único que hace es destruir la bala
 	manager_->setActive(b, false);
 }
 

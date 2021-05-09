@@ -1,5 +1,1 @@
-﻿  FighterGunSystem.cpp
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14,15): warning C4099: 'Entity': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\ecs_4\ecs\Entity.h(14): message : vea la declaración de 'Entity'
-D:\uni\TPV2\P2\TPV2P2\TPV2\TPV2\game\FighterGunSystem.cpp(22,61): warning C4018: '>=': no coinciden signed/unsigned
-  TPV2.vcxproj -> D:\uni\TPV2\P2\TPV2P2\TPV2\bin\TPV2Debug.exe
+﻿
